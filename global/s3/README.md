@@ -1,12 +1,11 @@
 # Creating S3 bucket.
 
-### Why you need S3 bucket.
-It is a good practice to have a separate Terraform state file for each environment(development, staging, production, etc) and not have one single Terraform state file. With separated state files you can only break the state file in the environment you are working on and not break the state files in the other environments. 
-
+### Why you need S3 bucket and its purpose.
+S3 bucket is needed to store Terraform state file of MySQL database. The database talks to the webservers cluster. Webservers cluster also needs to read the state file of MySQL database to make sute it reads data from the right database. 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in the repository:
 - __main.tf__ - terraform configuration files to create S3 bucket.
-- __variables.tf__ - terraform configuration file with input variables.
+- __variables.tf__ - terraform configuration file with variables parameters.
 - __output.tf__ - terraform configuration file with output parameters.
 
 ----------------------------------------------------------------------------------------------------------------------
