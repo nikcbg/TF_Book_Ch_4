@@ -1,6 +1,6 @@
 # TF_Book_Ch_4
 
-### The purpose of the repository is to explain what is terraform modules, module basics and examples of terraform modules configuration code.
+### The purpose of the repository is to explain what is terraform modules, module basics and examples of terraform module configuration code.
 
 ### What is terraform module:
 
