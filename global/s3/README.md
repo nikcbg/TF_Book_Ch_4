@@ -1,7 +1,7 @@
 # Creating S3 bucket.
 
 ### Why you need S3 bucket and its purpose.
-S3 bucket is needed to store Terraform state file got the module and MySQL database. The database talks to the webservers cluster.  
+S3 bucket is needed to store Terraform state file for the module and MySQL database which talks to webservers cluster.
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in the repository:
