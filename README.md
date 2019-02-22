@@ -13,20 +13,29 @@ Terraform module is any set of terraform configurantion files in a folder.
 
 #### Configuration code for where state file will be stored.
                         
- #### [global/s3](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/global/s3)- S3 bucket is where terraform state file for the module and MySQL database is stored. 
+ #### 1. [global/s3](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/global/s3)- S3 bucket is where terraform state file for the module and MySQL database is stored. 
 --------------------------------------------------------------------------------------------------------
 
 #### Configuration code for terraform module.
 
- #### [module_example/modules/services/webserver_cluster](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/modules/services/webserver_cluster) - terraform configuration code that creates webservers cluster and load balancer. This code will be used as module. 
+ #### 2. [module_example/modules/services/webserver_cluster](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/modules/services/webserver_cluster) - terraform configuration code that creates webservers cluster and load balancer. This code will be used as module. 
 ------------------------------------------------------------------------------------------------------------------
 
-#### Configuration code for MySQL database, webservers cluster and load balncer in production environment.
+#### Configuration code for MySQL database, webservers cluster and load balncer in production environment. This part of the project uses module that is stored on local directory on your computer. 
                        
- #### [module_example/prod/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/prod/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster.
+ #### 3. [module_example/prod/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/prod/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster.
 
- #### [module_example/prod/services/webserver_cluster](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/prod/services/webserver_cluster) - terraform configuration code in prod folder that uses the code in module folder to create webservers cluster and load balancer.
+ #### 4. [module_example/prod/services/webserver_cluster](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/prod/services/webserver_cluster) - terraform configuration code in prod folder that uses the code in module folder to create webservers cluster and load balancer.
  
- 
+------------------------------------------------------------------------------------------------------------------------ 
       
-  
+ #### Configuration code for MySQL database, webservers cluster and load balncer in staging environment (replica of production environment). This part of the project uses module that is stored on local directory on your computer. 
+                       
+ #### 5. [module_example/prod/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/stage/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster.
+
+ #### 6. [module_example/prod/services/webserver_cluster](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/stage/services/webserver_cluster) - terraform configuration code in prod folder that uses the code in module folder to create webservers cluster and load balancer.
+ 
+ -----------------------------------------------------------------------------------------------------------------------
+ 
+ and pulled in via a versioned Git URL.
+ 
