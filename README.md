@@ -21,7 +21,7 @@ Terraform module is any set of terraform configurantion files in a folder.
 2. [module_example/modules/services/webserver_cluster](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/modules/services/webserver_cluster) - terraform configuration code that creates webservers cluster and load balancer. This code will be used as module. 
 ------------------------------------------------------------------------------------------------------------------
 
-#### Configuration code for MySQL database, webservers cluster and load balncer in production environment. __**The module is stored in local directory on your computer**__. 
+#### Configuration code for MySQL database, webservers cluster and load balncer in production environment. __The module is stored in local directory on your computer__. 
                        
 3. [module_example/prod/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/prod/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster.
 
@@ -29,7 +29,7 @@ Terraform module is any set of terraform configurantion files in a folder.
  
 ------------------------------------------------------------------------------------------------------------------------ 
       
- #### Configuration code for MySQL database, webservers cluster and load balncer in staging environment (replica of production environment). __**The module is stored in local directory on your computer**__. 
+ #### Configuration code for MySQL database, webservers cluster and load balncer in staging environment (replica of production environment). __The module is stored in local directory on your computer__. 
                        
 5. [module_example/stage/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/module_example/stage/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster.
 
@@ -37,7 +37,7 @@ Terraform module is any set of terraform configurantion files in a folder.
  
  -----------------------------------------------------------------------------------------------------------------------
  
- #### Configuration code for MySQL database, webservers cluster and load balncer in production environment. __**The module is stored in GitHub and pulled in via versioned Git URL**__.
+ #### Configuration code for MySQL database, webservers cluster and load balncer in production environment. __The module is stored in GitHub and pulled in via versioned Git URL__.
  
 7. [multi_repo_example/live/prod/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/multi_repo_example/live/prod/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster. 
 
@@ -45,7 +45,7 @@ Terraform module is any set of terraform configurantion files in a folder.
  
 ----------------------------------------------------------------------------------------------------------------------- 
 
-#### Configuration code for MySQL database, webservers cluster and load balncer in staging environment (replica of production environment). __**The module is stored in GitHub and pulled in via versioned Git URL**__.
+#### Configuration code for MySQL database, webservers cluster and load balncer in staging environment (replica of production environment). __The module is stored in GitHub and pulled in via versioned Git URL__.
                        
 9. [multi_repo_example/live/stage/data_stores/mysql](https://github.com/nikcbg/TF_Book_Ch_4/tree/master/multi_repo_example/live/stage/data_stores/mysql) - terraform configuration code in prod folder that creates MySQL database which talks to webservers cluster.
 
