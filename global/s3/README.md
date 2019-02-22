@@ -30,6 +30,23 @@ export AWS_SECRET_ACCESS_KEY="your secret access key here"
 
 - execute `terraform init` - to initialize the provider and download the neccesery plugins.
   
-- execute `terraform apply` - to apply the desired changes.
+- execute `terraform apply` - to apply the desired changes, the output should diplay the following:
+
+```
+aws_s3_bucket.terraform_state: Creation complete after 9s (ID: name-of-your-S3-bucket)
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+s3_bucket_arn = arn:aws:s3:::name-of-your-S3-bucket
+
+```
 
 - execute `terraform destroy` - to destroy the resource that you just created.
+   - you will need to remove or comment out the below part of `main.tf` code in case to destroy the S3 bucket since it has prevent destroy enabled:
+ ```
+ lifecycle {
+    prevent_destroy = true
+  }
+ ```
