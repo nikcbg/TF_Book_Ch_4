@@ -1,6 +1,5 @@
 # Creating webservers cluster and load balancer in AWS using terraform module
-This folder contains terraform code that pulls code form module folder you created earlier in this project and it creates webservers cluster and load balancer in AWS. Make sure to create MySQL databse first thebecause webservers cluster depends on it. 
-
+This folder contains terraform code that pulls code form module that is stored in GitHub and pulled in via GitHub URL and it creates webservers cluster and load balancer in AWS. Make sure to create MySQL databse first because the webservers cluster depends on it. 
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in this folder:
@@ -52,7 +51,8 @@ variable "db_remote_state_key" {
 ```
 Terraform will perform the following actions:
 
-  + aws_security_group_rule.allow_testing_inbound
+  + aws_autoscaling_schedule.scale_in_at_night
+  + aws_autoscaling_schedule.scale_out_during_business_hours
   + module.webserver_cluster.aws_autoscaling_group.example
   + module.webserver_cluster.aws_elb.example
   + module.webserver_cluster.aws_launch_configuration.example
@@ -62,7 +62,7 @@ Terraform will perform the following actions:
   + module.webserver_cluster.aws_security_group_rule.allow_http_inbound
   + module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound
   
-Plan: 9 to add, 0 to change, 0 to destroy.
+Plan: 10 to add, 0 to change, 0 to destroy.
 ```
   
 - execute `terraform apply` - to apply the desired changes, the output should diplay the following:
@@ -70,48 +70,51 @@ Plan: 9 to add, 0 to change, 0 to destroy.
 ```
 Terraform will perform the following actions:
 
-module.webserver_cluster.aws_security_group.elb: Creation complete after 4s (ID: sg-005df57635bd95457)
-module.webserver_cluster.aws_security_group.instance: Creation complete after 4s (ID: sg-0c6f4de6875170729)
-module.webserver_cluster.aws_security_group_rule.allow_http_inbound: Creation complete after 2s (ID: sgrule-1689915126)
-module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound: Creation complete after 2s (ID: sgrule3383582714)
-module.webserver_cluster.aws_launch_configuration.example: Creation complete after 2s (ID: terraform-20190225093938825400000001)
-aws_security_group_rule.allow_testing_inbound: Creation complete after 4s (ID: sgrule-1106509836)
-module.webserver_cluster.aws_security_group_rule.allow_all_outbound: Creation complete after 6s (ID: sgrule-437653907)
-module.webserver_cluster.aws_elb.example: Creation complete after 10s (ID: webservers-stage)
-module.webserver_cluster.aws_autoscaling_group.example: Creation complete after 47s (ID: tf-asg-20190225093948516400000002)
+module.webserver_cluster.aws_security_group.elb: Creation complete after 4s (ID: sg-02026907d74b8671b)
+module.webserver_cluster.aws_security_group.instance: Creation complete after 4s (ID: sg-012f715c70c565e38)
+module.webserver_cluster.aws_security_group_rule.allow_http_inbound: Creation complete after 1s (ID: sgrule-2974788162)
+module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound: Creation complete after 1s (ID: sgrule 2053617246)
+module.webserver_cluster.aws_launch_configuration.example: Creation complete after 2s (ID: terraform 20190225130235281300000001)
+module.webserver_cluster.aws_security_group_rule.allow_all_outbound: Creation complete after 3s (ID: sgrule-3462810078)
+module.webserver_cluster.aws_elb.example: Creation complete after 9s (ID: webservers-prod)
+module.webserver_cluster.aws_autoscaling_group.example: Creation complete after 48s (ID: tf-asg-20190225130244317600000002)
+aws_autoscaling_schedule.scale_out_during_business_hours: Creation complete after 2s (ID: scale-out-during-business-hours)
+aws_autoscaling_schedule.scale_in_at_night: Creation complete after 2s (ID: scale-in-at-night)
 
-Apply complete! Resources: 9 added, 0 changed, 0 destroyed.
+Apply complete! Resources: 10 added, 0 changed, 0 destroyed.
 
 Outputs:
 
-elb_dns_name = name-of-webserver-cluster
+elb_dns_name = your-webservers-cluster-name
 ```
 - execute `terraform destroy` - to destroy the resources you created, the output should diplay the following:
   
 ```
 Terraform will perform the following actions:
 
-  - aws_security_group_rule.allow_testing_inbound
+  - aws_autoscaling_schedule.scale_in_at_night
+  - aws_autoscaling_schedule.scale_out_during_business_hours
   - module.webserver_cluster.aws_autoscaling_group.example
-  - modul.webserver_cluster.aws_elb.example
+  - module.webserver_cluster.aws_elb.example
   - module.webserver_cluster.aws_launch_configuration.example
   - module.webserver_cluster.aws_security_group.elb
   - module.webserver_cluster.aws_security_group.instance
   - module.webserver_cluster.aws_security_group_rule.allow_all_outbound
   - module.webserver_cluster.aws_security_group_rule.allow_http_inbound
   - module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound
-  
-Plan: 0 to add, 0 to change, 9 to destroy.
 
-aws_security_group_rule.allow_testing_inbound: Destruction complete after 1s
-module.webserver_cluster.aws_autoscaling_group.example: Destruction complete after 1m50s
-module.webserver_cluster.aws_elb.example: Destruction complete after 2s
-module.webserver_cluster.aws_launch_configuration.example: Destruction complete after 0s
-module.webserver_cluster.aws_security_group.elb: Destruction complete after 1m7s
-module.webserver_cluster.aws_security_group.instance: Destruction complete after 2s
-module.webserver_cluster.aws_security_group_rule.allow_all_outbound: Destruction complete after 3s
-module.webserver_cluster.aws_security_group_rule.allow_http_inbound: Destruction complete after 4s
-module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound: Destruction complete after 1s
+Plan: 0 to add, 0 to change, 10 to destroy.
 
-Destroy complete! Resources: 9 destroyed.
+aws_autoscaling_schedule.scale_in_at_night: Destruction complete after 1s
+aws_autoscaling_schedule.scale_out_during_business_hours: Destruction complete after 1s
+module.webserver_cluster.aws_security_group_rule.allow_http_inbound: Destruction complete after 2s
+module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound: Destruction complete after 2s
+module.webserver_cluster.aws_security_group_rule.allow_all_outbound: Destruction complete after 4s
+module.webserver_cluster.aws_autoscaling_group.example: Destruction complete after 1m18s
+module.webserver_cluster.aws_launch_configuration.example: Destruction complete after 1s
+module.webserver_cluster.aws_elb.example: Destruction complete after 3s
+module.webserver_cluster.aws_security_group.instance: Destruction complete after 3s
+module.webserver_cluster.aws_security_group.elb: Destruction complete after 1m40s
+
+Destroy complete! Resources: 10 destroyed.
 ```
