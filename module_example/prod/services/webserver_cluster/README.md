@@ -1,5 +1,4 @@
-# Creating webservers cluster and load balancer in AWS using the module you created earlier in this project
-
+# Creating webservers cluster and load balancer in AWS using module
 This folder contains terraform code that pulls code form module folder you created earlier in this project and it creates webservers cluster and load balancer in AWS.
 
 --------------------------------------------------------------------------------------------------------------
