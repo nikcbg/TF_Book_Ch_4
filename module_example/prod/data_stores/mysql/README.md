@@ -1,6 +1,6 @@
 # Createing MySQL database in AWS
 
-This folder contains terraform code that creates MySQL database in AWS.
+This folder contains terraform code that creates MySQL database that talks to webservers cluster in AWS.
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in this folder:
@@ -24,17 +24,53 @@ export AWS_SECRET_ACCESS_KEY="your secret access key here"
 - go into the subfolder which is this example `cd module_example/prod/data_stores/mysql`.
 
 ------------------------------------------------------------------------------------------------------------------
+
+### Configure remote state storage using S3 bucket:
+- terraform state file of this folder will be stored in the S3 bucket you created in the begining of this project  
+- add the below code to your `main.tf` file:
+
+```
+terraform {
+  backend "s3" {
+    bucket  = "name-of-your-S3-bucket"
+    region  = "us-east-1"
+    key     = "path to the state file inside the bucket"
+    encrypt = true
+  }
+}
+
+```
+
+-------------------------------------------------------------------------------------------------------------------
+
 ### Commands needed to build the MySQL database.
 - execute `terraform init` - to initialize the provider and download the neccesery plugins.
   
-- execute `terraform plan` - to create execution plan for changes to be applied, the output should diplay the following:  
-```
+- execute `terraform plan` - to create execution plan for changes to be applied, the output should diplay the following:
 
+```
+Terraform will perform the following actions:
+
+  + aws_db_instance.example
+  
+Plan: 1 to add, 0 to change, 0 to destroy.
 ```
   
 - execute `terraform apply` - to apply the desired changes, the output should diplay the following:
 
 ```
+Terraform will perform the following actions:
+
+  + aws_db_instance.exampl
+  
+aws_db_instance.example: Creating...  
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+address = address-of-MySQL-database-in-AWS
+port = XXXX
 
 ```
   
