@@ -11,3 +11,5 @@ This folder contains Terraform code that deploys webservers cluster (using EC2 a
 
 ### Note:
 Terraform module is not supposed to be deployed directly and it should be used in other terraform code. All the code in this module is pulled in by the stage and production examples. 
+
+----------------------------------------------------------------------------------------------------------------------------
