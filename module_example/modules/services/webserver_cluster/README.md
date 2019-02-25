@@ -1,6 +1,5 @@
  # Terraform module example that creates webservers cluster and load balancer
-
-#### This folder contains Terraform code that deploys webservers cluster (using EC2 and Auto Scaling) and load balancer in AWS and returns "Hello World" text, database adress and port number.
+This folder contains Terraform code that deploys webservers cluster (using EC2 and Auto Scaling) and load balancer in AWS and returns "Hello World" text, database adress and port number.
 
 -----------------------------------------------------------------------------------------------------------------------
 ### List of files in the repository:
