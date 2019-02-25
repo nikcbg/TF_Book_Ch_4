@@ -1,10 +1,10 @@
-# Createing MySQL database in AWS
+# Createing MySQL database in AWS for production environment
 
 This folder contains terraform code that creates MySQL database that talks to webservers cluster in AWS.
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in this folder:
-- main.tf - terraform configuration file that creates MySQL datavase.
+- main.tf - terraform configuration file that creates MySQL database.
 - variables.tf - terraform configuration file with input variables.
 - output.tf - terraform configuration file with output parameters.
 ----------------------------------------------------------------------------------------------------------------------
