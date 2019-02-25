@@ -73,4 +73,17 @@ address = address-of-MySQL-database-in-AWS
 port = XXXX
 
 ```
-  
+- execute terraform destroy - to destroy the resources you created, the output should diplay the following:
+   - you should run destroy command after destroying the resources in webservers_cluster folder first 
+```
+Terraform will perform the following actions:
+
+  - aws_db_instance.example
+
+Plan: 0 to add, 0 to change, 1 to destroy.
+
+aws_db_instance.example: Destruction complete after 5m12s
+
+Destroy complete! Resources: 1 destroyed.
+
+```
