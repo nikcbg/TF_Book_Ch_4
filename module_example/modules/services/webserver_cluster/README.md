@@ -10,4 +10,6 @@
 - __user_data.sh__ - bash script that prints "Hello World", database adress and port number.
 ---------------------------------------------------------------------------------------------------------------
 
-### Note: Terraform module is not supposed to be deployed directly and it should be used in other terraform code. All the code in this module is pulled in by the stage and production examples. 
+### Note:
+---------------------------------------------------------------------------------------------------------------------------
+Terraform module is not supposed to be deployed directly and it should be used in other terraform code. All the code in this module is pulled in by the stage and production examples. 
