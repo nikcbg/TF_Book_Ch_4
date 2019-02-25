@@ -1,6 +1,7 @@
 # Createing MySQL database in AWS for production environment
 
 This folder contains terraform code that creates MySQL database that talks to webservers cluster in AWS.
+The MySQL database should be created first because webservers cluster depends on it. 
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in this folder:
