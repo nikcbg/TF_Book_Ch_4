@@ -100,6 +100,8 @@ Terraform will perform the following actions:
   - module.webserver_cluster.aws_security_group_rule.allow_http_inbound
   - module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound
   
+Plan: 0 to add, 0 to change, 9 to destroy.
+
 aws_security_group_rule.allow_testing_inbound: Destruction complete after 1s
 module.webserver_cluster.aws_autoscaling_group.example: Destruction complete after 1m50s
 module.webserver_cluster.aws_elb.example: Destruction complete after 2s
@@ -110,4 +112,5 @@ module.webserver_cluster.aws_security_group_rule.allow_all_outbound: Destruction
 module.webserver_cluster.aws_security_group_rule.allow_http_inbound: Destruction complete after 4s
 module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound: Destruction complete after 1s
 
+Destroy complete! Resources: 9 destroyed.
 ```
