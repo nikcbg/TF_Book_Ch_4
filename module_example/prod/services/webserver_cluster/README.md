@@ -1,5 +1,6 @@
 # Creating webservers cluster and load balancer in AWS using terraform module
-This folder contains terraform code that pulls code form module folder you created earlier in this project and it creates webservers cluster and load balancer in AWS.
+This folder contains terraform code that pulls code form module folder you created earlier in this project and it creates webservers cluster and load balancer in AWS. Make sure to create MySQL databse first thebecause webservers cluster depends on it. 
+
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in this folder:
