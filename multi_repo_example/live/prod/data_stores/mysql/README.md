@@ -22,7 +22,7 @@ export AWS_SECRET_ACCESS_KEY="your secret access key here"
    
 - clone the repository to your local computer: `git clone https://github.com/nikcbg/TF_Book_Ch_4`.
 - go into the cloned repo on your computer: `cd TF_Book_Ch_4`.
-- go into the subfolder which is this example `cd # Createing MySQL database in AWS for production environment
+- go into the subfolder which is this example `cd # multi_repo_example/live/prod/data_stores/mysql`
 
 This folder contains terraform code that creates MySQL database that talks to webservers cluster in AWS.
 The MySQL database should be created first because webservers cluster depends on it. 
