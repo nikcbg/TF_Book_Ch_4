@@ -3,10 +3,10 @@ This folder contains Terraform code that deploys webservers cluster (using EC2 a
 
 -----------------------------------------------------------------------------------------------------------------------
 ### List of files in the repository:
-- __main.tf__ - terraform configuration file that creates webservers cluster and load balancer.
-- __variables.tf__ - terraform configuration file with input variables.
-- __output.tf__ - terraform configuration file with output parameters.
-- __user_data.sh__ - bash script that prints "Hello World", database adress and port number.
+- main.tf - terraform configuration file that creates webservers cluster and load balancer.
+- variables.tf - terraform configuration file with input variables.
+- output.tf - terraform configuration file with output parameters.
+- user_data.sh - bash script that prints "Hello World", database adress and port number.
 ---------------------------------------------------------------------------------------------------------------
 
 ### Note:
