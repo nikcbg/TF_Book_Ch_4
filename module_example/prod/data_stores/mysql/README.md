@@ -1,7 +1,6 @@
-# Isolating Terraform state file
+# Createing MySQL database in AWS
 
-### Why isolating Terraform state file
-It is a good practice to have a separate Terraform state file for each environment(development, staging, production, etc) and not have one single Terraform state file. With separated state files you can only break the state file in the environment you are working on and not break the state files in the other environments. 
+This folder contains terraform code that creates MySQL database in AWS.
 
 --------------------------------------------------------------------------------------------------------------
 ### List of files in this folder:
