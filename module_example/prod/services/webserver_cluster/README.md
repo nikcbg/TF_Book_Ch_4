@@ -1,4 +1,4 @@
-# Creating webservers cluster and load balancer in AWS using module
+# Creating webservers cluster and load balancer in AWS using terraform module
 This folder contains terraform code that pulls code form module folder you created earlier in this project and it creates webservers cluster and load balancer in AWS.
 
 --------------------------------------------------------------------------------------------------------------
@@ -85,4 +85,29 @@ Outputs:
 
 elb_dns_name = name-of-webserver-cluster
 ```
+- execute `terraform destroy` - to destroy the resources you created, the output should diplay the following:
   
+```
+Terraform will perform the following actions:
+
+  - aws_security_group_rule.allow_testing_inbound
+  - module.webserver_cluster.aws_autoscaling_group.example
+  - modul.webserver_cluster.aws_elb.example
+  - module.webserver_cluster.aws_launch_configuration.example
+  - module.webserver_cluster.aws_security_group.elb
+  - module.webserver_cluster.aws_security_group.instance
+  - module.webserver_cluster.aws_security_group_rule.allow_all_outbound
+  - module.webserver_cluster.aws_security_group_rule.allow_http_inbound
+  - module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound
+  
+aws_security_group_rule.allow_testing_inbound: Destruction complete after 1s
+module.webserver_cluster.aws_autoscaling_group.example: Destruction complete after 1m50s
+module.webserver_cluster.aws_elb.example: Destruction complete after 2s
+module.webserver_cluster.aws_launch_configuration.example: Destruction complete after 0s
+module.webserver_cluster.aws_security_group.elb: Destruction complete after 1m7s
+module.webserver_cluster.aws_security_group.instance: Destruction complete after 2s
+module.webserver_cluster.aws_security_group_rule.allow_all_outbound: Destruction complete after 3s
+module.webserver_cluster.aws_security_group_rule.allow_http_inbound: Destruction complete after 4s
+module.webserver_cluster.aws_security_group_rule.allow_server_http_inbound: Destruction complete after 1s
+
+```
